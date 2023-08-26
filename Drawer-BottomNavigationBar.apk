@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: Material(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Whatsapp"),
+          backgroundColor: Colors.green.shade900,
+          actions: [
+            Padding(
+              padding: EdgeInsets.all(7.0),
+              child: Icon(Icons.camera_alt),
+            ),
+            Padding(
+              padding: EdgeInsets.all(7.0),
+              child: Icon(Icons.search),
+            ),
+            Padding(
+              padding: EdgeInsets.all(7.0),
+              child: Icon(Icons.settings),
+            ),
+          ],
+        ),
+        body: Center(child: Text("Bhailog")),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            print("Welcome! How can i help you!");
+          },
+          child: Icon(Icons.chat),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: 0,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "HOME"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_bag), label: "CART"),
+            BottomNavigationBarItem(icon: Icon(Icons.taxi_alert), label: "RENT")
+          ],
+        ),
+        drawer: Drawer(
+          child: Column(children: [
+            ListTile(leading: Icon(Icons.settings), title: Text("SETTINGS")),
+            ListTile(leading: Icon(Icons.local_taxi), title: Text("HISTORY")),
+            ListTile(
+                leading: Icon(Icons.shopping_bag), title: Text("VIEW CART")),
+          ]),
+        ),
+      ),
+    ),
+  ));
+}
